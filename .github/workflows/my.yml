@@ -35,10 +35,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Store variables
+        run: |
+          echo ${{ secrets.TEST_VAR }}
+          echo ${{ secrets.TEST_SECRET }}
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         env:
-          TEST_VAR: ${{secrets.TEST_SECRET}}
+          TEST_VAR: ${{ secrets.TEST_VAR }}
+          TEST_SECRET: ${{ secrets.TEST_SECRET }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
