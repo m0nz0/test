@@ -8,7 +8,16 @@
 <div>Hi!</div>
 <script>
     console.log('this is log')
-    console.log('!!!!', env.TEST_VAR)
+    try {
+        console.log('!!!!', env.TEST_VAR)
+    } catch (e) {
+        console.log(e)
+    }
+    try {
+        console.log('!!!!', process.environment.TEST_VAR)
+    } catch (e) {
+        console.log(e)
+    }
 </script>
 </body>
 </html>
