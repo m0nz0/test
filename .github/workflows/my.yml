@@ -38,7 +38,7 @@ jobs:
 
       - name: Store variables
         run: |
-          echo ${{ secrets.TEST_VAR }}
+          echo ${{ env.TEST_VAR }}
           echo ${{ secrets.TEST_SECRET }}
 
       - name: Setup Pages
